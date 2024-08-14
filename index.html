@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz app</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <!-- animation background -->
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+
+<!-- setting Section -->
+ <section class="Setting " id="setting">
+<div class="content p-5 w-50 ">
+<h1 class=" main-border border-bottom border-dark  text-center display-4 main-color-text">Set your Quiz</h1>
+<div>
+    <div class="form-group">
+<label for="category" class="text-left fs-5 second-color-text"> Choose the Category</label>
+<select class="form-control" name="category" id="category" >
+    <option value="18">Science: Computers</option>
+    <option value="27">Animals</option>
+    <option value="23">History</option>
+    <option value="21">Sports</option>
+    <option value="9">General Knowledge</option>
+    <option value="15">Video Games</option>
+</select>
+    </div>
+    <div class="form-group">
+        <label for="difficulty" class="second-color-text">Difficulty</label>
+         <div class="form-check d-flex flex-column " id="difficulty">
+                        <label class="form-check-label ">
+                            <input type="radio" class="form-check-input" name="difficulty" id="easy" value="easy"
+                                checked>
+                            Easy
+                        </label>
+                          <label class="form-check-label ">
+                            <input type="radio" class="form-check-input" name="difficulty" id="medium" value="medium"
+                                checked>
+                            Medium
+                        </label>
+                          <label class="form-check-label ">
+                            <input type="radio" class="form-check-input" name="difficulty" id="hard" value="hard"
+                                checked>
+                            Hard
+                        </label>
+         </div>
+
+    </div>
+    <div class="form-group">
+            <input class="form-control " type="number" name="number" id="number" placeholder="Number of Questions">
+        
+    </div>
+    <div class="alert alert-danger" id="message">Please Choose Number of Questions</div>
+    <button class="btn" id="btn-start">Start</button>
+</div>
+</div>
+ </section>
+
+ <!-- quiz Section -->
+
+ <section class="quiz " id="quiz">
+    <div class="content p-5 w-50">
+        <div class="main-border">
+<h1 class="text-center display-4 main-color-text">Quiz</h1>
+ <div class="second-color-text">
+            Questions <span id="currentQuestions"></span>Of <span id="TotalQuestion"></span>
+         </div>
+        </div>
+
+        <div>
+        
+        </div>
+        <div>
+        <p class="main-color-text d-inline"></p>
+        <p  class=" my-3" id="questions"> </p>
+        </div>
+        <div id="answers" class=" d-flex flex-column">
+        </div>
+        <div class="alert alert-danger" id="alert-answer">Please Choose Your Answer</div>
+       <button class="btn" id="btn-next">Next</button>
+    </div>
+
+ </section>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/main.module.js"></script>
+</body>
+</html>
