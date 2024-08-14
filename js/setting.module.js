@@ -20,7 +20,6 @@ export class setting{
                let quizData=`https://opentdb.com/api.php?amount=${number}&category=${categ}&difficulty=${difficulty}`
                let questions=await this.getData(quizData)
                let finalRes=questions.results
-               console.log(finalRes);
                
                let Quiz=new quiz(finalRes)
             console.log(Quiz);

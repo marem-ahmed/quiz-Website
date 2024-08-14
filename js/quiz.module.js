@@ -17,7 +17,6 @@ export class quiz {
         let correctAnswers = this.correctAnswers = this.finalRes[this.currentNumOfQuestion].correct_answer
         let inCorrectAnswers = this.inCorrectAnswers = this.finalRes[this.currentNumOfQuestion].incorrect_answers
         let totalAnswers = [correctAnswers, ...inCorrectAnswers]
-        console.log(totalAnswers);
 
         document.querySelector('#questions').innerHTML = `<p class="main-color-text d-inline">Q${this.currentNumOfQuestion + 1}:</p> ${this.finalRes[this.currentNumOfQuestion].question}`
         document.querySelector("#currentQuestions").innerHTML = this.currentNumOfQuestion + 1;
@@ -30,27 +29,38 @@ export class quiz {
                             ${totalAnswers[i]}
                         </label>`
         }
-        console.log(document.querySelector('#answers'));
 
         document.querySelector('#answers').innerHTML = container
     }
     nextQuestion() {
-        let correctAnswers = this.correctAnswers = this.finalRes[this.currentNumOfQuestion].correct_answer;
+       
+        let correctAnswer = this.correctAnswers = this.finalRes[this.currentNumOfQuestion].correct_answer;
         let userAnswers = Array.from(document.getElementsByName('answer')).find(ele => ele.checked);
-        console.log(userAnswers);
-
-        if (userAnswers == 'undefined') {
-            console.log('ahhh');
-
+        let valueOfUserAnswer=userAnswers.value
+this.checkUserAnswer(correctAnswer,valueOfUserAnswer)
+        if (userAnswers == undefined) {
             $("#alert-answer").fadeIn(600);
-
-        }
-        else {
+        }else {
             this.currentNumOfQuestion++
             this.show()
-
+             $("#alert-answer").fadeOut(0);
 
         }
 
+  
+
     }
+          checkUserAnswer(correctAnswer,valueOfUserAnswer){
+       if(valueOfUserAnswer==correctAnswer){
+    $('#markCorrect').fadeIn(500).fadeOut(500)
+                  
+
+ 
+}else{
+                $('#markIncorrect').fadeIn(500).fadeOut(500)
+  
+
+
+}
+        }
 }

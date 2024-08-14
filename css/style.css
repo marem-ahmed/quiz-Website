@@ -9,10 +9,12 @@ body {
     border-bottom: solid 1px #201E43 ;
     padding-bottom: .9375rem;
 }
-#quiz,#message,#alert-answer{
+#quiz,#message,#alert-answer,.markQuestion{
     display: none;
 }
-
+.markQuestion{
+    border-radius: 10px;
+}
 .main-color-text{
     color: #5B99C2;
 }
